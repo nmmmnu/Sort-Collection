@@ -33,8 +33,10 @@ function radix_sort($a){
 			$store[$digit][] = $a[$i];
 
 			if ($ix == 0)
-				if ($max_digits < strlen($a[$i] . "") - 1)
+				if ($max_digits < strlen($a[$i] . "") - 1){
 					$max_digits = strlen($a[$i] . "") - 1;
+					echo "Max digits: $max_digits\n";
+				}
 		}
 
 	//	print_r($store);
@@ -50,7 +52,7 @@ function radix_sort($a){
 		
 		$ix++;
 		
-		if ($ix >= $max_digits)
+		if ($ix > $max_digits)
 			break;
 	}
 
@@ -59,7 +61,7 @@ function radix_sort($a){
 
 
 
-$a = array(324,23,2,35,6,444333,224,655545,23,2,4,78);
+$a = array(324,23,2,35,6,444333,224,615545,23,2,4,78);
 
 print_r(radix_sort($a));
 
